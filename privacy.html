@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — HPZ Human Performance Zone</title>
+  <meta name="description" content="HPZ Privacy Policy — how we collect, use, and protect your personal information." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #07090e;
+      --bg2: #0c0f16;
+      --bg3: #11151f;
+      --cyan: #00e5ff;
+      --green: #2dff7a;
+      --white: #edf1f8;
+      --gray: #8a94a8;
+      --mid: #404858;
+      --border: rgba(255,255,255,0.06);
+      --border2: rgba(255,255,255,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 40px;
+      background: rgba(7,9,14,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px;
+      letter-spacing: 4px;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--cyan); }
+
+    .nav-back {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--gray);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--cyan); }
+
+    /* PAGE */
+    .page {
+      position: relative;
+      z-index: 10;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 120px 40px 80px;
+    }
+
+    /* HEADER */
+    .doc-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .doc-tag::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--green);
+    }
+
+    .doc-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(40px, 6vw, 64px);
+      letter-spacing: 3px;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .doc-intro {
+      background: var(--bg2);
+      border: 1px solid rgba(45,255,122,0.15);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .doc-intro p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    .doc-intro .effective {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--green);
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-bottom: 36px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-body {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+    .doc-footer {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .doc-footer .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 4px;
+      margin-bottom: 8px;
+    }
+
+    .doc-footer .logo span { color: var(--cyan); }
+
+    .doc-footer p {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: var(--mid);
+      margin-bottom: 4px;
+    }
+
+    /* PAGE FOOTER */
+    footer {
+      position: relative;
+      z-index: 10;
+      border-top: 1px solid var(--border);
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      letter-spacing: 4px;
+    }
+
+    .footer-logo span { color: var(--cyan); }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--mid);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--cyan); }
+
+    .footer-copy {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--mid);
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .page { padding: 100px 20px 60px; }
+      footer { flex-direction: column; text-align: center; padding: 28px 20px; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">HP<span>Z</span></a>
+    <a href="index.html" class="nav-back">← Back to Home</a>
+  </nav>
+
+  <!-- PAGE CONTENT -->
+  <div class="page">
+    <div class="doc-tag">Legal</div>
+    <h1 class="doc-title">PRIVACY<br />POLICY</h1>
+
+    <div class="doc-intro">
+      <p>We are committed to protecting your personal information. This Privacy Policy explains how HPZ collects, uses, and safeguards your data when you use our platform.</p>
+      <p class="effective">Effective: May 24, 2026</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">1. Information We Collect</p>
+      <p class="section-body">We collect information you provide directly: your name, email address, and training profile (goal, sport/activity, level, equipment, frequency, limitations, division, and season). We also collect workout session data including duration, RPE scores, sets completed, and custom routines you create. Basic usage analytics (feature interactions, screen views) are collected automatically to improve the platform.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">2. How We Use Your Information</p>
+      <p class="section-body">We use your data to create and manage your account, generate personalized workout routines tailored to your profile, track your training progress over time, send in-app notifications relevant to your training, process Premium payments securely through Stripe, and continuously improve the HPZ platform. We do not sell your personal data to third parties or share it with advertisers.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">3. Data Storage and Security</p>
+      <p class="section-body">Your data is stored securely using Supabase with encryption in transit (TLS/SSL) and at rest. Row Level Security (RLS) is enforced across all user data, ensuring each user can only access their own information. Your training data is never accessible to other users. We take industry-standard measures to protect against unauthorized access, disclosure, or destruction of your data.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">4. Third-Party Services</p>
+      <p class="section-body">HPZ uses the following trusted third-party services: <strong style="color: #edf1f8;">Supabase</strong> for database and authentication, <strong style="color: #edf1f8;">Stripe</strong> for secure payment processing (we never store your credit card details), and <strong style="color: #edf1f8;">Vercel</strong> for app hosting and delivery. Each of these services maintains their own privacy policies governing how they handle data on our behalf.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">5. Your Rights</p>
+      <p class="section-body">You have the right to access, update, or delete your personal data at any time. You can update your profile information directly within the HPZ Settings screen. To request complete account deletion and removal of all associated data, contact us at hpzperformancezone@gmail.com with the subject "Account Deletion Request." We will process all deletion requests within 30 days.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">6. Children's Privacy</p>
+      <p class="section-body">HPZ is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. Users between 13 and 17 years old should use HPZ only with parental or guardian consent. If you believe a child under 13 has provided us with personal information, please contact us immediately at hpzperformancezone@gmail.com.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">7. Data Retention</p>
+      <p class="section-body">We retain your personal data as long as your account remains active. Workout session history and profile data are stored for the duration of your account. Upon verified account deletion, your personal data is permanently removed from our systems within 30 days, except where retention is required by applicable law.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">8. Cookies and Tracking</p>
+      <p class="section-body">HPZ uses session tokens and local storage to maintain your authenticated session and store your preferences locally on your device. We do not use advertising cookies or third-party tracking pixels. The limited analytics data we collect is used solely to improve the HPZ platform experience.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">9. Changes to This Policy</p>
+      <p class="section-body">We may update this Privacy Policy periodically. When we make material changes, we will notify you through the App or by email. The "Effective" date at the top of this Policy will reflect the most recent update. Continued use of HPZ after changes take effect constitutes your acceptance of the revised Privacy Policy.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">10. Contact</p>
+      <p class="section-body">Privacy questions or data requests? Email us at <strong style="color: #2dff7a;">hpzperformancezone@gmail.com</strong>. We respond to all privacy inquiries within 30 days.</p>
+    </div>
+
+    <div class="doc-footer">
+      <div class="logo">HP<span>Z</span></div>
+      <p>Human Performance Zone</p>
+      <p>hpzperformancezone@gmail.com</p>
+      <p>© 2026 HPZ. All rights reserved.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">HP<span>Z</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html#pillars">Pillars</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="mailto:hpzperformancezone@gmail.com">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 HPZ — Human Performance Zone. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>

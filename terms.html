@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — HPZ Human Performance Zone</title>
+  <meta name="description" content="HPZ Terms of Service — read our terms carefully before using the Human Performance Zone platform." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #07090e;
+      --bg2: #0c0f16;
+      --bg3: #11151f;
+      --cyan: #00e5ff;
+      --white: #edf1f8;
+      --gray: #8a94a8;
+      --mid: #404858;
+      --border: rgba(255,255,255,0.06);
+      --border2: rgba(255,255,255,0.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 40px;
+      background: rgba(7,9,14,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px;
+      letter-spacing: 4px;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--cyan); }
+
+    .nav-back {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--gray);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--cyan); }
+
+    /* PAGE */
+    .page {
+      position: relative;
+      z-index: 10;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 120px 40px 80px;
+    }
+
+    /* HEADER */
+    .doc-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .doc-tag::before {
+      content: '';
+      width: 24px;
+      height: 2px;
+      background: var(--cyan);
+    }
+
+    .doc-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(40px, 6vw, 64px);
+      letter-spacing: 3px;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .doc-intro {
+      background: var(--bg2);
+      border: 1px solid rgba(0,229,255,0.15);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .doc-intro p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    .doc-intro .effective {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--cyan);
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-bottom: 36px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-body {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+    .doc-footer {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .doc-footer .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 4px;
+      margin-bottom: 8px;
+    }
+
+    .doc-footer .logo span { color: var(--cyan); }
+
+    .doc-footer p {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: var(--mid);
+      margin-bottom: 4px;
+    }
+
+    /* PAGE FOOTER */
+    footer {
+      position: relative;
+      z-index: 10;
+      border-top: 1px solid var(--border);
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      letter-spacing: 4px;
+    }
+
+    .footer-logo span { color: var(--cyan); }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--mid);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--cyan); }
+
+    .footer-copy {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--mid);
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .page { padding: 100px 20px 60px; }
+      footer { flex-direction: column; text-align: center; padding: 28px 20px; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">HP<span>Z</span></a>
+    <a href="index.html" class="nav-back">← Back to Home</a>
+  </nav>
+
+  <!-- PAGE CONTENT -->
+  <div class="page">
+    <div class="doc-tag">Legal</div>
+    <h1 class="doc-title">TERMS OF<br />SERVICE</h1>
+
+    <div class="doc-intro">
+      <p>Please read these terms carefully before using HPZ. By accessing or using HPZ, you agree to be bound by these Terms of Service.</p>
+      <p class="effective">Effective: May 24, 2026</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">1. Acceptance of Terms</p>
+      <p class="section-body">By accessing or using HPZ, you confirm that you are at least 18 years of age (or 13+ with parental consent), have read and understood these Terms, and agree to be legally bound by them. If you do not agree to these Terms, do not use HPZ.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">2. Description of Service</p>
+      <p class="section-body">HPZ — Human Performance Zone is a digital performance platform organized into three divisions: APZ (Athlete Performance Zone) for strength and sport-specific training, RPZ (Recovery Performance Zone) for mobility and injury prevention, and LPZ (Lifestyle Performance Zone) for general fitness and wellness. HPZ serves athletes, coaches, and anyone training with purpose.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">3. User Accounts</p>
+      <p class="section-body">You are responsible for maintaining the confidentiality of your account credentials and for all activity under your account. Notify us immediately of any unauthorized use at hpzperformancezone@gmail.com. You may not share your account or use another person's account without permission.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">4. Free and Premium Services</p>
+      <p class="section-body">HPZ offers a free tier with core features and a Premium subscription with advanced features including the full Routine Builder, unlimited custom routines, all sport-specific programs, and advanced analytics. Premium subscriptions are billed monthly or annually through Stripe and are non-refundable except as required by applicable law.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">5. Health & Fitness Disclaimer</p>
+      <p class="section-body">IMPORTANT: HPZ is NOT a medical service. The workout programs, exercise descriptions, and training plans provided within HPZ are for general fitness and educational purposes only. Always consult a qualified healthcare professional before beginning any new exercise program. By using HPZ, you acknowledge that physical exercise carries inherent risks and you exercise at your own risk. HPZ, its founders, and affiliates are not responsible for any injury, illness, or damages resulting from use of the App or its content.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">6. Acceptable Use</p>
+      <p class="section-body">You agree not to use HPZ for unlawful purposes, attempt unauthorized access to the App or its systems, reproduce or sell any App content without written permission, use automated tools to extract data from the App, impersonate any person or entity, or upload any harmful, offensive, or illegal content.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">7. Intellectual Property</p>
+      <p class="section-body">All content within HPZ — including workout programs, exercise descriptions, training methodologies, block structures, logos, graphics, and software — is owned by HPZ (Human Performance Zone) and protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works from HPZ content without explicit written permission.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">8. Limitation of Liability</p>
+      <p class="section-body">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, HPZ AND ITS FOUNDERS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE APP, INCLUDING BUT NOT LIMITED TO PERSONAL INJURY, PROPERTY DAMAGE, LOSS OF DATA, OR LOSS OF REVENUE. OUR TOTAL LIABILITY TO YOU SHALL NOT EXCEED THE AMOUNT YOU PAID FOR HPZ IN THE 12 MONTHS PRECEDING THE CLAIM.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">9. Governing Law</p>
+      <p class="section-body">These Terms shall be governed by and construed in accordance with the laws of the Commonwealth of Puerto Rico and the United States of America, without regard to conflict of law principles.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">10. Changes to These Terms</p>
+      <p class="section-body">We may update these Terms from time to time. We will notify you of material changes through the App or by email. Your continued use of HPZ after changes take effect constitutes your acceptance of the revised Terms.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-title">11. Contact</p>
+      <p class="section-body">Questions about these Terms? Email us at <strong style="color: #00e5ff;">hpzperformancezone@gmail.com</strong>. We aim to respond to all inquiries within 5 business days.</p>
+    </div>
+
+    <div class="doc-footer">
+      <div class="logo">HP<span>Z</span></div>
+      <p>Human Performance Zone</p>
+      <p>hpzperformancezone@gmail.com</p>
+      <p>© 2026 HPZ. All rights reserved.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">HP<span>Z</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html#pillars">Pillars</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="mailto:hpzperformancezone@gmail.com">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 HPZ — Human Performance Zone. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
