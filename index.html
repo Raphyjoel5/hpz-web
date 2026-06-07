@@ -718,6 +718,326 @@
       margin-top: 20px;
     }
 
+    /* ── BETA PROGRAM ── */
+    .beta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,229,255,0.08);
+      border: 1px solid rgba(0,229,255,0.2);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--cyan);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .beta-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      animation: pulse 2s infinite;
+    }
+
+    .beta-intro {
+      font-size: 16px;
+      color: var(--gray);
+      line-height: 1.8;
+      max-width: 720px;
+      margin-top: 24px;
+    }
+
+    .beta-intro strong { color: var(--white); }
+
+    .beta-goals {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      max-width: 720px;
+      margin-top: 28px;
+    }
+
+    .beta-goals li {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .beta-goals li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--cyan);
+      flex-shrink: 0;
+    }
+
+    /* Beta process steps — 10-step grid */
+    .beta-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 60px;
+    }
+
+    .beta-step-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 18px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .beta-step-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0,229,255,0.25);
+    }
+
+    .beta-step-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px;
+      letter-spacing: 2px;
+      color: var(--cyan);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .beta-step-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--white);
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+
+    /* Resources */
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .resource-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .resource-card:hover {
+      border-color: rgba(0,229,255,0.25);
+      transform: translateY(-3px);
+    }
+
+    .resource-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      background: rgba(0,229,255,0.1);
+      margin-bottom: 20px;
+    }
+
+    .resource-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .resource-desc {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .resource-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .resource-list li {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .resource-list li::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+
+    .resource-btn {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--cyan);
+      color: var(--bg);
+      border: none;
+      border-radius: 10px;
+      padding: 14px 24px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .resource-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,229,255,0.3);
+    }
+
+    .resource-btn .dl-icon { font-size: 16px; }
+
+    /* Important notice callout */
+    .beta-notice {
+      margin-top: 40px;
+      background: rgba(255,181,32,0.06);
+      border: 1px solid rgba(255,181,32,0.25);
+      border-left: 3px solid var(--amber);
+      border-radius: 14px;
+      padding: 28px 32px;
+    }
+
+    .beta-notice-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--amber);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .beta-notice p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+
+    .beta-notice p:last-child { margin-bottom: 0; }
+
+    .beta-notice strong { color: var(--white); }
+
+    /* Beta CTA */
+    .beta-cta {
+      margin-top: 80px;
+      text-align: center;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 64px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .beta-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(0,229,255,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .beta-cta-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(32px, 5vw, 52px);
+      letter-spacing: 2px;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .beta-cta-title .accent { color: var(--cyan); }
+
+    .beta-cta-text {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.8;
+      max-width: 480px;
+      margin: 0 auto 28px;
+      position: relative;
+    }
+
+    .beta-cta-text strong { color: var(--white); }
+
+    .beta-cta-contacts {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    .beta-cta-contact {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--white);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+
+    .beta-cta-contact span.lbl {
+      color: var(--mid);
+      font-weight: 600;
+    }
+
+    .beta-cta-contact:hover { color: var(--cyan); }
+
     /* ── CTA ── */
     .cta-section {
       text-align: center;
@@ -815,6 +1135,20 @@
       .footer-links { justify-content: center; }
       .cta-section { padding: 80px 20px; }
       .quote-section { padding: 60px 20px; }
+      .beta-goals { grid-template-columns: 1fr; }
+      .beta-steps-grid { grid-template-columns: repeat(2, 1fr); }
+      .resources-grid { grid-template-columns: 1fr; }
+      .beta-cta { padding: 48px 24px; }
+      .beta-cta-contacts { flex-direction: column; gap: 16px; }
+      .beta-notice { padding: 24px 20px; }
+    }
+
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .beta-steps-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .beta-steps-grid { grid-template-columns: 1fr; }
     }
 
     /* ── ANIMATIONS ── */
@@ -840,6 +1174,7 @@
       <li><a href="#how">How It Works</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#beta">Beta Program</a></li>
       <li><a href="#" class="nav-cta" style="background:#161b26;color:#404858;cursor:default;">Coming Soon</a></li>
     </ul>
   </nav>
@@ -1113,6 +1448,127 @@
     <p class="pricing-trial-note fade-up">★ 7-day free trial included with all Premium plans — coming soon</p>
   </section>
 
+  <!-- BETA PROGRAM -->
+  <section id="beta">
+    <div class="beta-badge fade-up">Now Accepting Beta Testers</div>
+    <div class="section-tag fade-up">Beta Program</div>
+    <h2 class="section-title fade-up">HPZ BETA TESTING<br />PROGRAM</h2>
+    <p class="section-desc fade-up">HPZ is currently accepting a limited number of beta testers to help test the platform before its official release. The purpose of the beta program is to:</p>
+    <ul class="beta-goals fade-up">
+      <li>Gather real user feedback</li>
+      <li>Identify bugs and usability issues</li>
+      <li>Improve the user experience</li>
+      <li>Validate platform performance across devices</li>
+      <li>Help shape future versions of HPZ</li>
+    </ul>
+    <p class="beta-intro fade-up">
+      Join the HPZ Beta Testing Program and help shape the future of <strong>Human Performance Zone</strong>.
+      <br /><br />
+      As a beta tester, you'll gain early access to HPZ and help us improve the platform through real-world testing and feedback.
+      <br /><br />
+      Your input will directly influence future updates, features, and improvements.
+    </p>
+
+    <!-- HOW THE BETA PROCESS WORKS -->
+    <div style="margin-top: 80px;">
+      <div class="section-tag fade-up">Process</div>
+      <h3 class="section-title fade-up" style="font-size: clamp(28px, 4vw, 44px);">HOW THE BETA<br />PROCESS WORKS</h3>
+      <p class="section-desc fade-up">Ten simple steps from access to feedback.</p>
+      <div class="beta-steps-grid">
+        <div class="beta-step-card fade-up">
+          <div class="beta-step-num">01</div>
+          <div class="beta-step-title">Access the HPZ beta link</div>
+        </div>
+        <div class="beta-step-card fade-up">
+          <div class="beta-step-num">02</div>
+          <div class="beta-step-title">Add HPZ to your Home Screen</div>
+        </div>
+        <div class="beta-step-card fade-up">
+          <div class="beta-step-num">03</div>
+          <div class="beta-step-title">Create your account</div>
+        </div>
+        <div class="beta-step-card fade-up">
+          <div class="beta-step-num">04</div>
+          <div class="beta-step-title">Complete onboarding</div>
+        </div>
+        <div class="beta-step-card fade-up">
+          <div class="beta-step-num">05</div>
+          <div class="beta-step-title">Explore the Dashboard</div>
+        </div>
+        <div class="beta-step-card fade-up">
+          <div class="beta-step-num">06</div>
+          <div class="beta-step-title">Complete at least one workout session</div>
+        </div>
+        <div class="beta-step-card fade-up">
+          <div class="beta-step-num">07</div>
+          <div class="beta-step-title">Test additional features</div>
+        </div>
+        <div class="beta-step-card fade-up">
+          <div class="beta-step-num">08</div>
+          <div class="beta-step-title">Complete the HPZ Evaluation Form</div>
+        </div>
+        <div class="beta-step-card fade-up">
+          <div class="beta-step-num">09</div>
+          <div class="beta-step-title">Submit feedback to the HPZ Team</div>
+        </div>
+        <div class="beta-step-card fade-up">
+          <div class="beta-step-num">10</div>
+          <div class="beta-step-title">Follow @hpzperformance for updates</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BETA TESTING RESOURCES -->
+    <div style="margin-top: 90px;">
+      <div class="section-tag fade-up">Resources</div>
+      <h3 class="section-title fade-up" style="font-size: clamp(28px, 4vw, 44px);">BETA TESTING<br />RESOURCES</h3>
+      <p class="section-desc fade-up">Before starting your testing experience, please download and review the resources below.</p>
+      <div class="resources-grid">
+        <div class="resource-card fade-up">
+          <div class="resource-icon">📄</div>
+          <div class="resource-title">HPZ Beta Testing Instructions</div>
+          <p class="resource-desc">Official guide explaining the complete beta testing process, required testing steps, expectations, and participant responsibilities.</p>
+          <a href="/docs/HPZ_Beta_Testing_Instructions.pdf" download="HPZ_Beta_Testing_Instructions.pdf" class="resource-btn"><span class="dl-icon">⬇</span> Download Instructions (PDF)</a>
+        </div>
+        <div class="resource-card fade-up">
+          <div class="resource-icon">📝</div>
+          <div class="resource-title">HPZ Beta Testing Evaluation Form</div>
+          <p class="resource-desc">Official editable feedback document that must be completed by all beta testers after testing HPZ. This form includes:</p>
+          <ul class="resource-list">
+            <li>Onboarding evaluation</li>
+            <li>Dashboard evaluation</li>
+            <li>Workout experience evaluation</li>
+            <li>Exercise Library evaluation</li>
+            <li>Feature checklist</li>
+            <li>Overall rating</li>
+            <li>Open feedback</li>
+            <li>Premium interest survey</li>
+          </ul>
+          <a href="/docs/HPZ_Beta_Testing_Form.docx" download="HPZ_Beta_Testing_Form.docx" class="resource-btn"><span class="dl-icon">⬇</span> Download Evaluation Form (.DOCX)</a>
+        </div>
+      </div>
+
+      <!-- IMPORTANT NOTICE -->
+      <div class="beta-notice fade-up">
+        <div class="beta-notice-title"><span>⚠</span> Important</div>
+        <p>All beta testers are expected to complete and return the <strong>HPZ Beta Testing Evaluation Form</strong> after testing the platform.</p>
+        <p>The <strong>Instructions PDF</strong> explains the testing process. The <strong>Evaluation Form (.DOCX)</strong> is the document that must be completed and submitted back to the HPZ Team — via email or DM.</p>
+        <p>Your feedback directly influences future versions of HPZ.</p>
+      </div>
+    </div>
+
+    <!-- BETA CTA -->
+    <div class="beta-cta fade-up">
+      <h3 class="beta-cta-title">INTERESTED IN JOINING<br />THE <span class="accent">BETA?</span></h3>
+      <p class="beta-cta-text">Send us <strong>"BETA"</strong> on Instagram to request access — spots are limited.</p>
+      <div class="beta-cta-contacts">
+        <a href="https://instagram.com/hpzperformance" target="_blank" rel="noopener noreferrer" class="beta-cta-contact"><span class="lbl">Instagram:</span>&nbsp;@hpzperformance</a>
+        <a href="mailto:hpzperformancezone@gmail.com" class="beta-cta-contact"><span class="lbl">Email:</span>&nbsp;hpzperformancezone@gmail.com</a>
+      </div>
+      <a href="https://instagram.com/hpzperformance" target="_blank" rel="noopener noreferrer" class="btn-primary">Join The Beta</a>
+    </div>
+  </section>
+
   <!-- CTA -->
   <div class="cta-section">
     <h2 class="cta-title fade-up">YOUR ZONE<br /><span class="accent">AWAITS.</span></h2>
@@ -1129,6 +1585,7 @@
       <li><a href="#pillars">Pillars</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#beta">Beta Program</a></li>
       <li><a href="terms.html">Terms</a></li>
       <li><a href="privacy.html">Privacy</a></li>
       <li><a href="mailto:hpzperformancezone@gmail.com">Contact</a></li>
