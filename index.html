@@ -73,6 +73,34 @@
       flex-shrink: 0;
     }
 
+    /* ── NAV HAMBURGER ── */
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 11px;
+      color: var(--white);
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+
+    .nav-hamburger:hover { background: rgba(255,255,255,0.06); }
+
+    .hamburger-bar {
+      transition: transform 0.25s ease, opacity 0.2s ease;
+      transform-origin: center;
+    }
+
+    nav.nav-open .hamburger-bar.top-bar { transform: translateY(7px) rotate(45deg); }
+    nav.nav-open .hamburger-bar.mid-bar { opacity: 0; }
+    nav.nav-open .hamburger-bar.bot-bar { transform: translateY(-7px) rotate(-45deg); }
+
     /* ── NAV ── */
     nav {
       position: fixed;
@@ -1146,25 +1174,107 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      nav { padding: 14px 20px; }
+      /* Nav */
+      nav { padding: 8px 20px; }
+      .nav-hamburger { display: flex; }
       .nav-links { display: none; }
+      nav.nav-open .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: fixed;
+        top: 57px; left: 0; right: 0; bottom: 0;
+        background: rgba(7,9,14,0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 32px 28px;
+        gap: 4px;
+        z-index: 99;
+        overflow-y: auto;
+      }
+      nav.nav-open .nav-links li { width: 100%; }
+      nav.nav-open .nav-links a,
+      nav.nav-open .nav-links span.nav-cta {
+        font-size: 28px !important;
+        letter-spacing: 3px !important;
+        padding: 14px 0 !important;
+        color: var(--white) !important;
+        background: transparent !important;
+        min-height: 52px;
+        display: flex !important;
+        align-items: center;
+        border-radius: 0 !important;
+        width: 100%;
+        border-bottom: 1px solid var(--border);
+      }
+      nav.nav-open .nav-links li:last-child a,
+      nav.nav-open .nav-links li:last-child span { border-bottom: none; }
+
+      /* Hero */
+      .hero { padding: 88px 20px 56px; }
+      .hero-sub { font-size: 15px; letter-spacing: 1.5px; }
+      .hero-tagline { font-size: 16px; margin-bottom: 36px; }
+      .hero-btns { flex-direction: column; align-items: stretch; gap: 12px; }
+      .hero-btns .btn-primary,
+      .hero-btns .btn-secondary { width: 100%; text-align: center; padding: 16px 24px; }
+
+      /* Stats */
       .stats-bar { gap: 24px; padding: 24px 20px; }
       .stat-divider { display: none; }
+
+      /* Sections */
       section { padding: 60px 20px; }
+      #how { padding: 60px 20px !important; }
+
+      /* Grids */
       .pillars-grid { grid-template-columns: 1fr; }
       .steps-grid { grid-template-columns: repeat(2, 1fr); }
       .features-grid { grid-template-columns: 1fr; }
       .pricing-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; text-align: center; padding: 40px 20px; }
-      .footer-links { justify-content: center; }
-      .cta-section { padding: 80px 20px; }
-      .quote-section { padding: 60px 20px; }
       .beta-goals { grid-template-columns: 1fr; }
       .beta-steps-grid { grid-template-columns: repeat(2, 1fr); }
       .resources-grid { grid-template-columns: 1fr; }
-      .beta-cta { padding: 48px 24px; }
+
+      /* Body text — readability on small screens */
+      .step-desc { font-size: 14px; }
+      .feature-desc { font-size: 14px; }
+      .resource-desc { font-size: 14px; }
+      .beta-step-title { font-size: 14px; }
+      .beta-notice p { font-size: 14px; }
+
+      /* Tap targets */
+      .beta-cta-contact {
+        min-height: 44px;
+        padding: 6px 0;
+        overflow-wrap: break-word;
+        word-break: break-all;
+      }
+      .footer-links a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        padding: 4px 2px;
+      }
+
+      /* Quote */
+      .quote-section { padding: 60px 20px; }
+
+      /* Pricing */
+      .pricing-grid { margin-top: 40px; }
+
+      /* Beta */
+      .beta-cta { padding: 48px 20px; }
       .beta-cta-contacts { flex-direction: column; gap: 16px; }
       .beta-notice { padding: 24px 20px; }
+
+      /* CTA section */
+      .cta-section { padding: 80px 20px; }
+      .cta-section .btn-primary { width: 100%; text-align: center; padding: 16px 24px; }
+
+      /* Footer */
+      footer { flex-direction: column; text-align: center; padding: 40px 20px; }
+      .footer-links { justify-content: center; flex-wrap: wrap; gap: 8px 20px; }
+      .footer-copy { font-size: 11px; }
     }
 
     @media (max-width: 1024px) and (min-width: 769px) {
@@ -1172,7 +1282,15 @@
     }
 
     @media (max-width: 480px) {
+      .steps-grid { grid-template-columns: 1fr; }
       .beta-steps-grid { grid-template-columns: 1fr; }
+      .hero-title { letter-spacing: 2px; }
+      .pillar-card { padding: 24px 20px; }
+      .step-card { padding: 20px; }
+      .feature-card { padding: 20px; gap: 16px; }
+      .resource-card { padding: 24px 20px; }
+      .pricing-card { padding: 24px 20px; }
+      .beta-cta { padding: 40px 16px; }
     }
 
     /* ── ANIMATIONS ── */
@@ -1193,7 +1311,14 @@
   <!-- NAV -->
   <nav>
     <div class="nav-logo">HP<span>Z</span></div>
-    <ul class="nav-links">
+    <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links-list">
+      <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true">
+        <rect y="0" width="22" height="2" rx="1" fill="currentColor" class="hamburger-bar top-bar"/>
+        <rect y="7" width="22" height="2" rx="1" fill="currentColor" class="hamburger-bar mid-bar"/>
+        <rect y="14" width="22" height="2" rx="1" fill="currentColor" class="hamburger-bar bot-bar"/>
+      </svg>
+    </button>
+    <ul class="nav-links" id="nav-links-list">
       <li><a href="#pillars">Pillars</a></li>
       <li><a href="#how">How It Works</a></li>
       <li><a href="#features">Features</a></li>
@@ -1628,6 +1753,43 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Mobile nav hamburger
+    const navEl = document.querySelector('nav');
+    const hamburgerBtn = document.querySelector('.nav-hamburger');
+
+    function openNav() {
+      navEl.classList.add('nav-open');
+      hamburgerBtn.setAttribute('aria-expanded', 'true');
+      hamburgerBtn.setAttribute('aria-label', 'Close navigation menu');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeNav() {
+      navEl.classList.remove('nav-open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+      hamburgerBtn.setAttribute('aria-label', 'Open navigation menu');
+      document.body.style.overflow = '';
+    }
+
+    hamburgerBtn.addEventListener('click', () => {
+      navEl.classList.contains('nav-open') ? closeNav() : openNav();
+    });
+
+    // Close menu when any nav link is clicked
+    document.querySelectorAll('#nav-links-list a').forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && navEl.classList.contains('nav-open')) closeNav();
+    });
+
+    // Close menu if viewport resizes back to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeNav();
+    });
   </script>
 
 </body>
