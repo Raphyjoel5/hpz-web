@@ -116,13 +116,10 @@
     }
 
     .nav-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 28px;
-      letter-spacing: 4px;
-      color: var(--white);
+      display: flex;
+      align-items: center;
+      text-decoration: none;
     }
-
-    .nav-logo span { color: var(--cyan); }
 
     .nav-links {
       display: flex;
@@ -1139,12 +1136,9 @@
     }
 
     .footer-logo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 24px;
-      letter-spacing: 4px;
+      display: flex;
+      align-items: center;
     }
-
-    .footer-logo span { color: var(--cyan); }
 
     .footer-links {
       display: flex;
@@ -1310,7 +1304,13 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">HP<span>Z</span></div>
+    <a href="/" class="nav-logo" aria-label="HPZ Home">
+      <svg width="36" height="36" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="14" y="14" width="72" height="13" fill="#edf1f8"/>
+        <line x1="86" y1="27" x2="14" y2="73" stroke="#00e5ff" stroke-width="15" stroke-linecap="butt"/>
+        <rect x="14" y="73" width="72" height="13" fill="#edf1f8"/>
+      </svg>
+    </a>
     <button class="nav-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links-list">
       <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true">
         <rect y="0" width="22" height="2" rx="1" fill="currentColor" class="hamburger-bar top-bar"/>
@@ -1337,7 +1337,7 @@
       <p class="hero-sub">Human Performance Zone</p>
       <p class="hero-tagline">
         <strong>Train with system. Perform for real.</strong><br />
-        Built for athletes, coaches, and everyone who trains with purpose.
+        Built for athletes, lifestyles, coaches, and everyone who trains with purpose.
       </p>
       <div class="hero-btns">
         <a href="#beta" class="btn-primary">Join The Beta</a>
@@ -1359,7 +1359,7 @@
     </div>
     <div class="stat-divider"></div>
     <div class="stat-item">
-      <div class="stat-val">136</div>
+      <div class="stat-val">200+</div>
       <div class="stat-label">Exercises</div>
     </div>
   </div>
@@ -1382,18 +1382,6 @@
           <li>Baseball · Basketball · Soccer · Track · Others</li>
         </ul>
       </div>
-      <div class="pillar-card rpz fade-up">
-        <div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>
-        <div class="pillar-tag">RPZ</div>
-        <div class="pillar-name">Recovery Performance Zone</div>
-        <p class="pillar-desc">Recovery is not optional — it's part of the system. Mobility, injury prevention, and active recovery protocols.</p>
-        <ul class="pillar-features">
-          <li>Mobility & Movement Quality</li>
-          <li>Injury Prevention</li>
-          <li>Active Recovery</li>
-          <li>Shoulder · Hip · Knee Prehab · Others</li>
-        </ul>
-      </div>
       <div class="pillar-card lpz fade-up">
         <div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/></svg></div>
         <div class="pillar-tag">LPZ</div>
@@ -1404,6 +1392,18 @@
           <li>Body Composition</li>
           <li>Habit Development</li>
           <li>Beginner to Advanced</li>
+        </ul>
+      </div>
+      <div class="pillar-card rpz fade-up">
+        <div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></div>
+        <div class="pillar-tag">RPZ</div>
+        <div class="pillar-name">Recovery Performance Zone</div>
+        <p class="pillar-desc">Recovery is not optional — it's part of the system. Mobility, injury prevention, and active recovery protocols.</p>
+        <ul class="pillar-features">
+          <li>Mobility & Movement Quality</li>
+          <li>Injury Prevention</li>
+          <li>Active Recovery</li>
+          <li>Shoulder · Hip · Knee Prehab · Others</li>
         </ul>
       </div>
     </div>
@@ -1729,7 +1729,13 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">HP<span>Z</span></div>
+    <div class="footer-logo">
+      <svg width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="HPZ" role="img">
+        <rect x="14" y="14" width="72" height="13" fill="#edf1f8"/>
+        <line x1="86" y1="27" x2="14" y2="73" stroke="#00e5ff" stroke-width="15" stroke-linecap="butt"/>
+        <rect x="14" y="73" width="72" height="13" fill="#edf1f8"/>
+      </svg>
+    </div>
     <ul class="footer-links">
       <li><a href="#pillars">Pillars</a></li>
       <li><a href="#features">Features</a></li>
