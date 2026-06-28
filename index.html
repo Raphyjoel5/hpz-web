@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HPZ — Human Performance Zone | Train With System</title>
-  <meta name="description" content="Train with system. Perform for real. HPZ is the performance platform built by an athlete, for athletes." />
-  <meta name="title" content="HPZ — Human Performance Zone" />
+  <title>HPZ — Human Performance Zone | Train with System. Perform for Real.</title>
+  <meta name="description" content="Train with System. Perform for Real. HPZ is the structured performance platform for athletes, lifestyle trainers, coaches, and everyone who trains with purpose." />
   <meta name="keywords" content="HPZ, Human Performance Zone, athletic training, fitness app, workout, performance, APZ, RPZ, LPZ" />
   <link rel="canonical" href="https://www.hpzperformance.com/" />
   <meta property="og:title" content="HPZ — Human Performance Zone" />
   <meta property="og:description" content="Train with system. Perform for real. The performance platform built for athletes, coaches and everyone who trains with purpose." />
-  <meta property="og:url" content="https://www.hpzperformance.com" />
+  <meta property="og:url" content="https://www.hpzperformance.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://www.hpzperformance.com/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -1287,6 +1286,39 @@
       .beta-cta { padding: 40px 16px; }
     }
 
+    /* ── FOCUS STATES (keyboard accessibility) ── */
+    :focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .btn-primary:focus-visible,
+    .btn-secondary:focus-visible,
+    .resource-btn:focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 3px;
+    }
+
+    .nav-logo:focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 4px;
+      border-radius: 6px;
+    }
+
+    /* ── REDUCED MOTION ── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      .fade-up {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
     /* ── ANIMATIONS ── */
     .fade-up {
       opacity: 0;
@@ -1337,7 +1369,7 @@
       <p class="hero-sub">Human Performance Zone</p>
       <p class="hero-tagline">
         <strong>Train with system. Perform for real.</strong><br />
-        Built for athletes, lifestyles, coaches, and everyone who trains with purpose.
+        Built for athletes, lifestyle trainers, coaches, and everyone who trains with purpose.
       </p>
       <div class="hero-btns">
         <a href="#beta" class="btn-primary">Join The Beta</a>
@@ -1448,19 +1480,19 @@
   <section id="features">
     <div class="section-tag fade-up">Features</div>
     <h2 class="section-title fade-up">EVERYTHING<br />YOU NEED.</h2>
-    <p class="section-desc fade-up">HPZ is built with the tools a serious athlete actually needs — not watered-down fitness content.</p>
+    <p class="section-desc fade-up">HPZ is built with the tools serious performers actually need — structured, purposeful, and built for real training.</p>
     <div class="features-grid">
       <div class="feature-card fade-up">
         <div class="feature-icon" style="background: rgba(0,229,255,0.1); color: var(--cyan);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/></svg></div>
         <div>
           <div class="feature-title">Adaptive Routine Engine</div>
-          <p class="feature-desc">The system selects your workout based on sport, level, equipment, goal, and season. No two athletes get the same routine.</p>
+          <p class="feature-desc">The system selects your workout based on sport, level, equipment, goal, and season. No two users get the same routine.</p>
         </div>
       </div>
       <div class="feature-card fade-up">
         <div class="feature-icon" style="background: rgba(45,255,122,0.1); color: var(--green);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></div>
         <div>
-          <div class="feature-title">Exercise Library — 136 Movements</div>
+          <div class="feature-title">Exercise Library — 200+ Movements</div>
           <p class="feature-desc">Every exercise categorized by type, muscle group, equipment, and difficulty. Search and filter instantly.</p>
         </div>
       </div>
@@ -1521,7 +1553,7 @@
           <li class="included"><span class="check">✓</span> Smart onboarding & adaptive profile</li>
           <li class="included"><span class="check">✓</span> One automated routine per division</li>
           <li class="included"><span class="check">✓</span> Full Workout Engine & session tracking</li>
-          <li class="included"><span class="check">✓</span> Exercise Library — 136+ movements</li>
+          <li class="included"><span class="check">✓</span> Exercise Library — 200+ Movements</li>
           <li class="included"><span class="check">✓</span> Progress tracking & session calendar</li>
           <li class="included"><span class="check">✓</span> In-app notifications</li>
           <li><span class="cross">—</span> Routine Builder</li>
