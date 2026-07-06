@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script defer src="/_vercel/insights/script.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1286,6 +1287,77 @@
       .beta-cta { padding: 40px 16px; }
     }
 
+    /* ── FAQ ── */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 0;
+      text-align: left;
+      color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      line-height: 1.3;
+      transition: color 0.2s;
+    }
+
+    .faq-q:hover { color: var(--cyan); }
+
+    .faq-q[aria-expanded="true"] { color: var(--cyan); }
+
+    .faq-chevron {
+      stroke: currentColor;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+
+    .faq-q[aria-expanded="true"] .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-a {
+      padding: 0 0 22px;
+      animation: faq-open 0.25s ease;
+    }
+
+    .faq-a p {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
+    .faq-a strong { color: var(--white); }
+
+    @keyframes faq-open {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      #faq { padding: 60px 20px !important; }
+      .faq-q { font-size: 15px; }
+    }
+
     /* ── FOCUS STATES (keyboard accessibility) ── */
     :focus-visible {
       outline: 2px solid var(--cyan);
@@ -1356,6 +1428,7 @@
       <li><a href="#features">Features</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#beta">Beta Program</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><span class="nav-cta" style="background:#161b26;color:#404858;cursor:default;pointer-events:none;" aria-disabled="true">Coming Soon</span></li>
     </ul>
   </nav>
@@ -1750,6 +1823,98 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="faq" style="background: var(--bg2); max-width: 100%; padding: 100px 40px;">
+    <div style="max-width: 760px; margin: 0 auto;">
+      <div class="section-tag fade-up">FAQ</div>
+      <h2 class="section-title fade-up">COMMON<br />QUESTIONS.</h2>
+      <p class="section-desc fade-up">Everything you need to know about HPZ before getting started.</p>
+      <div class="faq-list" style="margin-top: 48px;">
+
+        <div class="faq-item fade-up">
+          <button class="faq-q" aria-expanded="false">
+            <span>What is HPZ?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a" hidden>
+            <p>HPZ — Human Performance Zone — is a structured training and performance app. It's built around three training divisions: APZ (Athletic Performance Zone), LPZ (Lifestyle Performance Zone), and RPZ (Recovery Performance Zone). The system adapts your training routine based on your sport, goal, level, equipment, and season — so every user gets a plan built for them, not a generic program.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-q" aria-expanded="false">
+            <span>Is HPZ available on iOS and Android?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a" hidden>
+            <p>HPZ is currently in beta as a Progressive Web App (PWA) — meaning it runs directly from your browser and can be added to your home screen on both iOS and Android, no app store required. Native App Store and Google Play versions are planned for the official launch.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-q" aria-expanded="false">
+            <span>What is the Beta Program?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a" hidden>
+            <p>The HPZ Beta Program gives a limited group of users early access to the platform before its official release. Beta testers help us identify bugs, validate the user experience, and shape future features. To join, send us a DM on Instagram at <strong>@hpzperformance</strong> with the word "BETA" — spots are limited.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-q" aria-expanded="false">
+            <span>Is HPZ free to use?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a" hidden>
+            <p>Yes — HPZ will have a free tier that gives you access to the core training system, including one automated routine per division, the full Workout Engine, session tracking, and 200+ exercises in the library. Premium plans (Monthly, Quarterly, Annual) unlock the Routine Builder, full routine library, and advanced analytics. All plans are coming soon.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-q" aria-expanded="false">
+            <span>What is the difference between APZ, LPZ, and RPZ?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a" hidden>
+            <p><strong>APZ (Athletic Performance Zone)</strong> is designed for athletes who train for real competition — strength, power, speed, and sport-specific programs for baseball, basketball, soccer, track, and more.<br /><br /><strong>LPZ (Lifestyle Performance Zone)</strong> is for anyone training with structure outside of competitive sports — general fitness, body composition, and habit-based training for all levels.<br /><br /><strong>RPZ (Recovery Performance Zone)</strong> is for mobility, injury prevention, and active recovery — an essential part of any performance system.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-q" aria-expanded="false">
+            <span>Do I need special equipment?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a" hidden>
+            <p>No. During onboarding, you tell HPZ what equipment you have access to — full gym, home gym, minimal equipment, or bodyweight only. The system adapts your routine accordingly. You can always update your equipment settings from your profile.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-q" aria-expanded="false">
+            <span>Can coaches use HPZ?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a" hidden>
+            <p>Yes. Coaches can use HPZ to design and manage their own training routines using the Routine Builder, assign structured programs based on sport and level, and track performance over time. HPZ gives coaches a clear, professional tool to deliver structured training — not just generic content.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-up">
+          <button class="faq-q" aria-expanded="false">
+            <span>When will HPZ officially launch?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-a" hidden>
+            <p>HPZ is currently in private beta. The official launch — including App Store, Google Play, and paid plans — is coming soon. Follow <strong>@hpzperformance</strong> on Instagram to be the first to know when we go live.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <div class="cta-section">
     <h2 class="cta-title fade-up">YOUR ZONE<br /><span class="accent">AWAITS.</span></h2>
@@ -1827,6 +1992,20 @@
     // Close menu if viewport resizes back to desktop
     window.addEventListener('resize', () => {
       if (window.innerWidth > 768) closeNav();
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        const answer = btn.nextElementSibling;
+        btn.setAttribute('aria-expanded', String(!expanded));
+        if (expanded) {
+          answer.hidden = true;
+        } else {
+          answer.hidden = false;
+        }
+      });
     });
   </script>
 
