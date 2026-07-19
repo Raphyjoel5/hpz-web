@@ -41,6 +41,16 @@ window.addEventListener('resize', () => {
   if (window.innerWidth > 768) closeNav();
 });
 
+// Analytics: elements with data-event fire a named Vercel Analytics custom event.
+// Requires Vercel Web Analytics with custom events enabled (Pro plan); no-op otherwise.
+document.querySelectorAll('[data-event]').forEach(el => {
+  el.addEventListener('click', () => {
+    if (typeof window.va === 'function') {
+      window.va('event', { name: el.dataset.event });
+    }
+  });
+});
+
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {
     const expanded = btn.getAttribute('aria-expanded') === 'true';

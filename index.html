@@ -1358,6 +1358,96 @@
       .faq-q { font-size: 15px; }
     }
 
+    /* ── FOLLOW / SOCIAL ── */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 760px;
+      margin: 40px auto 0;
+    }
+
+    .social-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      text-decoration: none;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .social-card:hover {
+      border-color: rgba(0,229,255,0.35);
+      transform: translateY(-3px);
+    }
+
+    .social-card-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: rgba(0,229,255,0.1);
+      color: var(--cyan);
+    }
+
+    .social-card-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .social-card-handle {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+
+    .social-card-desc {
+      font-size: 13.5px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 14px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      color: var(--gray);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .footer-social a:hover {
+      color: var(--cyan);
+      border-color: rgba(0,229,255,0.4);
+    }
+
+    @media (max-width: 768px) {
+      #follow { padding: 60px 20px !important; }
+    }
+
     /* ── FOCUS STATES (keyboard accessibility) ── */
     :focus-visible {
       outline: 2px solid var(--cyan);
@@ -1598,6 +1688,7 @@
         </div>
       </div>
     </div>
+    <p class="section-desc fade-up" style="text-align: center; margin: 48px auto 0; font-size: 14px;">New features are announced first on our channels — <a href="#follow" style="color: var(--cyan); text-decoration: none;">see where to follow HPZ</a>.</p>
   </section>
 
   <!-- QUOTE -->
@@ -1915,6 +2006,35 @@
     </div>
   </section>
 
+  <!-- FOLLOW HPZ -->
+  <section id="follow">
+    <div class="section-tag fade-up" style="justify-content: center;">Follow The System</div>
+    <h2 class="section-title fade-up" style="text-align: center;">TRAIN SMARTER.<br /><span style="color: var(--cyan);">STAY CONNECTED.</span></h2>
+    <p class="section-desc fade-up" style="text-align: center; margin: 0 auto;">New exercises, training insights, and app updates drop on our channels first — before they reach the platform.</p>
+    <div class="social-grid">
+      <a href="https://instagram.com/hpzperformance" target="_blank" rel="noopener noreferrer" class="social-card fade-up" data-event="social_instagram_click">
+        <div class="social-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></div>
+        <div>
+          <div class="social-card-name">Instagram</div>
+          <div class="social-card-handle">@hpzperformance</div>
+          <p class="social-card-desc">Exercise demos, training tips, and beta access announcements. This is where new features are revealed first.</p>
+        </div>
+      </a>
+      <a href="https://facebook.com/hpzperformance" target="_blank" rel="noopener noreferrer" class="social-card fade-up" data-event="social_facebook_click">
+        <div class="social-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+        <div>
+          <div class="social-card-name">Facebook</div>
+          <div class="social-card-handle">HPZ Performance</div>
+          <p class="social-card-desc">Platform updates, community discussion, and longer-form training content for everyone who trains with purpose.</p>
+        </div>
+      </a>
+      <!-- TikTok and Threads cards ready to activate — add URLs and remove this comment block:
+      <a href="TIKTOK_URL" target="_blank" rel="noopener noreferrer" class="social-card fade-up" data-event="social_tiktok_click">...</a>
+      <a href="THREADS_URL" target="_blank" rel="noopener noreferrer" class="social-card fade-up" data-event="social_threads_click">...</a>
+      -->
+    </div>
+  </section>
+
   <!-- CTA -->
   <div class="cta-section">
     <h2 class="cta-title fade-up">YOUR ZONE<br /><span class="accent">AWAITS.</span></h2>
@@ -1941,6 +2061,10 @@
       <li><a href="terms.html">Terms</a></li>
       <li><a href="privacy.html">Privacy</a></li>
       <li><a href="mailto:hpzperformancezone@gmail.com">Contact</a></li>
+    </ul>
+    <ul class="footer-social">
+      <li><a href="https://instagram.com/hpzperformance" target="_blank" rel="noopener noreferrer" aria-label="HPZ on Instagram" data-event="social_instagram_click"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a></li>
+      <li><a href="https://facebook.com/hpzperformance" target="_blank" rel="noopener noreferrer" aria-label="HPZ on Facebook" data-event="social_facebook_click"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
     </ul>
     <div class="footer-copy">© 2026 HPZ — Human Performance Zone. All rights reserved.</div>
   </footer>
