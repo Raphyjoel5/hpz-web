@@ -137,4 +137,62 @@ curl -sI http://www.hpzperformance.com/ | head -3; curl -sI https://hpzperforman
 grep -rInE "(api[_-]?key|secret|token|password)\s*[:=]" --include="*.html" --include="*.js" --include="*.json" .
 ```
 
+---
+
+# Ronda 2 — Correcciones (2026-07-20, misma rama)
+
+## Cambios realizados y archivos modificados
+
+| Archivo | Cambio |
+|---|---|
+| `404.html` (**nuevo**) | Página 404 con branding HPZ: logo Z, "404" gigante Bebas Neue con el 0 en cyan, mensaje "Out of the Zone", botón "Back to Home", `noindex`, reduced-motion, grid de fondo idéntico al sitio |
+| `index.html` | + JSON-LD (`Organization` + `WebSite` + `FAQPage` con las 8 FAQs reales) · `--text-muted`/`--mid` → `#7d8799` · contenido envuelto en `<main>` |
+| `terms.html`, `privacy.html` | `--mid` → `#7d8799` · `<div class="page">` → `<main class="page">` |
+| `desktop.ini` | Confirmado eliminado del repo; `.gitignore` lo bloquea; ningún archivo necesario afectado (verificado con `git status` limpio y sitio funcionando) |
+
+## Contraste (antes → después)
+
+| Texto | Antes | Después | Color final |
+|---|---|---|---|
+| `--mid` (footer terms/privacy, doc-footer) | **2.17:1** ❌ | **5.50:1** ✅ | `#7d8799` |
+| `--text-muted` sobre cards `bg2` (#0c0f16) | **4.12:1** ❌ | **5.29:1** ✅ | `#7d8799` |
+| `#7d8799` sobre `bg3` (#11151f) | — | **5.04:1** ✅ | — |
+
+Cumple WCAG AA (≥4.5:1) sobre los tres fondos. Cambio visual: el gris tenue es un paso más claro; layout, tamaños y distribución intactos.
+
+## Lighthouse — medición REAL (headless Chrome, localhost)
+
+| Categoría | Móvil (antes → después) | Desktop |
+|---|---|---|
+| Performance | 86 | **97** |
+| Accessibility | 98 → **100** (fix: landmark `<main>`) | **98→100** |
+| Best Practices | 96 | 96 |
+| SEO | **100** | **100** |
+
+Métricas: **Desktop** FCP/LCP 1.0s, CLS 0.018, TBT 0ms. **Móvil (throttling 4x)** FCP/LCP 3.3s, CLS 0.02, TBT 0ms.
+Limitaciones honestas: (1) medición en localhost — producción con CDN de Vercel será igual o mejor en TTFB; (2) **INP no es medible en laboratorio** (es una métrica de campo; el proxy TBT = 0ms es óptimo); (3) el 96 de Best Practices y el 86 móvil provienen principalmente del CSS de Google Fonts (render-blocking) y CSS sin minificar — aceptado para conservar mantenibilidad; (4) puntuación de "errors-in-console" en local se debe al script de Vercel Insights que solo existe en producción.
+
+## Validación JSON-LD
+
+- `JSON.parse` correcto (validado en navegador), `@graph` con `Organization`, `WebSite`, `FAQPage` (8 preguntas idénticas al contenido visible).
+- Solo datos reales: nombre, URL, logo (og-image), email y las 2 redes verificadas. Sin dirección, teléfono, ratings, fundadores ni fechas inventadas.
+- CSP no lo bloquea (los bloques `ld+json` no son ejecutables).
+- **Limitaciones:** no se ejecutó el Rich Results Test de Google (herramienta externa — recomendable correrlo tras el deploy en https://search.google.com/test/rich-results). Desde 2023 Google muestra rich results de FAQ solo para sitios gubernamentales/salud; el markup sigue siendo válido, ayuda a la comprensión de la página por buscadores/LLMs y no perjudica.
+
+## Pruebas de la página 404
+
+- **Local:** renderiza correctamente, botón a `/`, sin scroll horizontal, `noindex` presente.
+- **Preview de Vercel** (deployment `dpl_6CEx...`, rama audit): `GET /pagina-que-no-existe` → **status 404 real + página HPZ** ("Out of the Zone", "Back to Home") ✅. Verificado vía share-link (el preview tiene Deployment Protection activa — eso es normal y no aplica a producción).
+
+## Re-verificaciones (todas ✅)
+
+Home, nav desktop (6 links) y hamburguesa, FAQ (abre/cierra), footer (2 íconos sociales), social cards (2), descargas beta (.pdf/.docx), sitemap 200, robots 200, canonical, OG, Twitter cards, redirects http→https 308 / apex→www 307, consola del navegador sin errores.
+
+## Pendientes tras ronda 2
+
+- Rich Results Test post-deploy (manual, 1 min).
+- Favicon PNG fallback (B3, opcional).
+- Skip link (opcional, ya con a11y 100).
+- Email capture / Vercel Pro para eventos (decisiones tuyas).
+
 **Veredicto: la web está estable y es seguro seguir utilizándola.** Sin hallazgos críticos ni altos. Los pendientes (404 branded, schema, favicon PNG, contraste footer) son mejoras, no riesgos.
