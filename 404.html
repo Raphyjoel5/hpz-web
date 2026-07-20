@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — HPZ Human Performance Zone</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #07090e;
+      --bg2: #0c0f16;
+      --cyan: #00e5ff;
+      --white: #edf1f8;
+      --gray: #8a94a8;
+      --mid: #7d8799;
+      --border: rgba(255,255,255,0.06);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .logo { margin-bottom: 32px; }
+
+    .code {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(90px, 18vw, 160px);
+      letter-spacing: 8px;
+      line-height: 1;
+      color: var(--white);
+    }
+
+    .code span { color: var(--cyan); }
+
+    .msg-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin: 16px 0 12px;
+    }
+
+    .msg-desc {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.7;
+      max-width: 420px;
+      margin-bottom: 36px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--cyan);
+      color: #04141a;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 36px;
+      border-radius: 8px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,229,255,0.25);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .foot {
+      position: relative;
+      margin-top: 48px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: var(--mid);
+      text-transform: uppercase;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <svg width="48" height="48" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="HPZ" role="img">
+      <rect x="14" y="14" width="72" height="13" fill="#edf1f8"/>
+      <line x1="86" y1="27" x2="14" y2="73" stroke="#00e5ff" stroke-width="15" stroke-linecap="butt"/>
+      <rect x="14" y="73" width="72" height="13" fill="#edf1f8"/>
+    </svg>
+  </div>
+
+  <h1 class="code">4<span>0</span>4</h1>
+  <p class="msg-title">Out of the Zone</p>
+  <p class="msg-desc">The page you're looking for doesn't exist or has been moved. Get back to the system and keep training.</p>
+  <a href="/" class="btn-primary">Back to Home</a>
+
+  <p class="foot">HPZ — Human Performance Zone</p>
+
+</body>
+</html>
