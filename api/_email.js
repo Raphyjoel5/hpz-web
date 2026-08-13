@@ -30,9 +30,9 @@ function welcomeHtml(unsubscribeUrl) {
 
       <div style="margin-bottom:26px;">
         <a href="${SITE}/" style="text-decoration:none;">
-          <img src="${SITE}/email-logo.png" width="200" height="70"
-               alt="HPZ — Human Performance Zone"
-               style="display:block;border:0;outline:none;text-decoration:none;width:200px;max-width:100%;height:auto;" />
+          <img src="${SITE}/email-logo.png" width="72" height="72"
+               alt="HPZ"
+               style="display:block;border:0;outline:none;text-decoration:none;width:72px;height:72px;border-radius:10px;" />
         </a>
       </div>
 
