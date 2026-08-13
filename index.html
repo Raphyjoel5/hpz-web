@@ -1521,6 +1521,201 @@
       #follow { padding: 60px 20px !important; }
     }
 
+    /* ── EARLY ACCESS / LEAD CAPTURE ── */
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .lead-band {
+      max-width: 100%;
+      padding: 64px 40px;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .lead-band-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(28px, 4vw, 38px);
+      letter-spacing: 2px;
+      line-height: 1.05;
+      margin-bottom: 10px;
+    }
+
+    .lead-band-title .accent { color: var(--cyan); }
+
+    .lead-band-desc {
+      font-size: 14.5px;
+      color: var(--gray);
+      line-height: 1.7;
+      max-width: 520px;
+      margin: 0 auto 26px;
+    }
+
+    .lead-form { max-width: 520px; margin: 0 auto; }
+
+    .lead-form-row {
+      display: flex;
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .lead-input {
+      flex: 1 1 auto;
+      min-width: 0;
+      background: var(--bg3);
+      border: 1px solid var(--border2);
+      border-radius: 10px;
+      padding: 14px 16px;
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-size: 15px;
+      transition: border-color 0.2s;
+    }
+
+    .lead-input::placeholder { color: var(--text-muted); }
+    .lead-input:hover { border-color: rgba(0,229,255,0.3); }
+    .lead-input:focus { outline: none; border-color: var(--cyan); }
+    .lead-input[aria-invalid="true"] { border-color: #ff6b6b; }
+
+    .lead-btn {
+      flex: 0 0 auto;
+      background: var(--cyan);
+      color: var(--bg);
+      border: none;
+      border-radius: 10px;
+      padding: 14px 26px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 17px;
+      letter-spacing: 2.5px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    }
+
+    .lead-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,229,255,0.22);
+    }
+
+    .lead-btn:disabled { opacity: 0.6; cursor: default; }
+
+    .lead-hint {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    .lead-hint a { color: var(--text-muted); }
+
+    .lead-msg {
+      font-size: 13.5px;
+      line-height: 1.6;
+      margin-top: 12px;
+      min-height: 1px;
+    }
+
+    .lead-msg.is-error { color: #ff8585; }
+    .lead-msg.is-info { color: var(--cyan); }
+
+    /* Honeypot — hidden from humans and assistive tech, visible to naive bots. */
+    .lead-hp {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    /* Success state */
+    .lead-done { max-width: 520px; margin: 0 auto; }
+
+    .lead-done-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(26px, 3.6vw, 34px);
+      letter-spacing: 2px;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .lead-done-title .accent { color: var(--cyan); }
+
+    .lead-done-text {
+      font-size: 14.5px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    .lead-seg { margin-top: 24px; }
+
+    .lead-seg-q {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .lead-seg-btns {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .lead-seg-btn {
+      background: transparent;
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      padding: 10px 18px;
+      color: var(--gray);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .lead-seg-btn:hover:not(:disabled) {
+      color: var(--cyan);
+      border-color: rgba(0,229,255,0.4);
+    }
+
+    .lead-seg-btn:disabled { opacity: 0.5; cursor: default; }
+
+    /* Variant inside the dark beta / final CTA panels */
+    .lead-form-inline { margin: 0 auto 22px; }
+
+    .lead-alt {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+    }
+
+    .lead-alt a { color: var(--cyan); text-decoration: none; }
+    .lead-alt a:hover { text-decoration: underline; }
+
+    @media (max-width: 560px) {
+      .lead-band { padding: 48px 20px; }
+      .lead-form-row { flex-direction: column; }
+      .lead-btn { width: 100%; padding: 15px 26px; }
+      .lead-seg-btns { flex-direction: column; }
+      .lead-seg-btn { width: 100%; }
+    }
+
     /* ── FOCUS STATES (keyboard accessibility) ── */
     :focus-visible {
       outline: 2px solid var(--cyan);
@@ -1631,6 +1826,13 @@
       <div class="stat-val">200+</div>
       <div class="stat-label">Exercises</div>
     </div>
+  </div>
+
+  <!-- EARLY ACCESS -->
+  <div class="lead-band" id="early-access">
+    <h2 class="lead-band-title fade-up">GET INSIDE <span class="accent">THE ZONE.</span></h2>
+    <p class="lead-band-desc fade-up">Be first to experience what's next from HPZ. Get beta openings, launch updates, training insights and early access delivered directly to you.</p>
+    <div class="fade-up" data-lead-mount="hero"></div>
   </div>
 
   <!-- PILLARS -->
@@ -1979,7 +2181,9 @@
     <!-- BETA CTA -->
     <div class="beta-cta fade-up">
       <h3 class="beta-cta-title">INTERESTED IN JOINING<br />THE <span class="accent">BETA?</span></h3>
-      <p class="beta-cta-text">Send us <strong>"BETA"</strong> on Instagram to request access — spots are limited.</p>
+      <p class="beta-cta-text">Join the HPZ Early Access List and be among the first notified about beta openings, new features and the official launch.</p>
+      <div class="lead-form-inline" data-lead-mount="beta"></div>
+      <p class="beta-cta-text">Prefer Instagram? Send us <strong>"BETA"</strong> at @hpzperformance to request access — spots are limited.</p>
       <div class="beta-cta-contacts">
         <a href="https://instagram.com/hpzperformance" target="_blank" rel="noopener noreferrer" class="beta-cta-contact"><span class="lbl">Instagram:</span>&nbsp;@hpzperformance</a>
         <a href="mailto:hpzperformancezone@gmail.com" class="beta-cta-contact"><span class="lbl">Email:</span>&nbsp;hpzperformancezone@gmail.com</a>
@@ -2116,6 +2320,7 @@
     <div class="hero-btns fade-up">
       <a href="#beta" class="btn-primary">Join The Beta</a>
     </div>
+    <div class="fade-up" style="margin-top: 36px;" data-lead-mount="final"></div>
   </div>
   </main>
 
@@ -2146,6 +2351,7 @@
   </footer>
 
   <script defer src="/app.js"></script>
+  <script defer src="/leads.js"></script>
 
 </body>
 </html>
