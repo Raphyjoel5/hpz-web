@@ -28,8 +28,12 @@ function welcomeHtml(unsubscribeUrl) {
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background:#0c0f16;border:1px solid rgba(255,255,255,0.08);border-radius:14px;">
     <tr><td style="padding:36px 32px;font-family:Arial,Helvetica,sans-serif;">
 
-      <div style="margin-bottom:24px;">
-        <span style="display:inline-block;width:34px;height:34px;background:#00e5ff;border-radius:6px;"></span>
+      <div style="margin-bottom:26px;">
+        <a href="${SITE}/" style="text-decoration:none;">
+          <img src="${SITE}/email-logo.png" width="200" height="70"
+               alt="HPZ — Human Performance Zone"
+               style="display:block;border:0;outline:none;text-decoration:none;width:200px;max-width:100%;height:auto;" />
+        </a>
       </div>
 
       <h1 style="margin:0 0 18px;font-size:28px;line-height:1.15;letter-spacing:1px;color:#edf1f8;text-transform:uppercase;">
